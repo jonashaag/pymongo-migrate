@@ -8,16 +8,17 @@ MIGRATION_MODULE_TMPL = '''\
 {description}
 """
 import pymongo
+import pymongo.database
 
 name = {name!r}
 dependencies = {dependencies!r}
 
 
-def upgrade(db: "pymongo.database.Database"):
+def upgrade(db: pymongo.database.Database):
     pass
 
 
-def downgrade(db: "pymongo.database.Database"):
+def downgrade(db: pymongo.database.Database):
     pass
 '''
 MAX_NAME_LEN = 60
