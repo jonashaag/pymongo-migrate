@@ -171,7 +171,7 @@ class MongoMigrate:
                 with _MeasureTime() as mt:
                     migration.upgrade(self.db)
                     self.logger.info(
-                        "Execution time of %r: %s seconds", migration.name, mt.elapsed
+                        "Execution time of %r: %.2f seconds", migration.name, mt.elapsed
                     )
             migration_state.applied = dt()
             self.set_state(migration_state)
